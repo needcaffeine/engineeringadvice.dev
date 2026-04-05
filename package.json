@@ -10,7 +10,6 @@
   "scripts": {
     "clean:caches": "rm -rf .astro node_modules/.vite",
     "astro": "astro",
-    "prebuild": "npm run clean:caches",
     "build": "astro check && astro build",
     "predev": "npm run clean:caches",
     "dev": "astro dev",

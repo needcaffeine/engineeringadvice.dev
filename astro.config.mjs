@@ -65,6 +65,7 @@ export default defineConfig({
   ],
   vite: {
     optimizeDeps: {
+      ignoreOutdatedRequests: true,
       exclude: [
         '@astrojs/cloudflare/entrypoints/server',
         '@astrojs/cloudflare/entrypoints/server.js',
@@ -73,6 +74,8 @@ export default defineConfig({
     },
     ssr: {
       optimizeDeps: {
+        noDiscovery: true,
+        ignoreOutdatedRequests: true,
         exclude: [
           '@astrojs/cloudflare/entrypoints/server',
           '@astrojs/cloudflare/entrypoints/server.js',
@@ -81,7 +84,10 @@ export default defineConfig({
       }
     },
     server: {
-      allowedHosts: ['brick.local']
+      allowedHosts: ['brick.local'],
+      watch: {
+        ignored: ['**/.vercel/**', '**/dist/**']
+      }
     },
     plugins: [tailwindcss()]
   }

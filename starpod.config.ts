@@ -8,28 +8,33 @@ export default defineStarpodConfig({
   hosts: [
     {
       name: 'Keyur Hindocha',
-      bio: "Co-host of Engineering Advice You Didn't Ask For.",
-      img: 'avatar-light.png'
+      bio: 'Engineering leader in 🇨🇦, Co-host @EngAdvicePod, Ex-CTO and co-founder at Flyta',
+      img: 'keyur-hindocha.jpg',
+      twitter: 'https://x.com/keyurhindocha'
     },
     {
       name: 'Louie Bacaj',
-      bio: "Co-host of Engineering Advice You Didn't Ask For.",
-      img: 'avatar-light.png'
+      bio: 'Engineer turned Entrepreneur, turned Engineer, and the cycle continues.',
+      img: 'louie-bacaj.jpg',
+      twitter: 'https://x.com/LBacaj'
     },
     {
       name: 'Mitra Raman',
-      bio: "Co-host of Engineering Advice You Didn't Ask For.",
-      img: 'avatar-light.png'
+      bio: 'rebuilding the care economy @rosiematch. ex @yc @cmu @amazon',
+      img: 'mitra-raman.jpg',
+      twitter: 'https://x.com/ramannoodlez'
     },
     {
       name: 'Thiago Ghisi',
-      bio: "Co-host of Engineering Advice You Didn't Ask For.",
-      img: 'avatar-light.png'
+      bio: '🧑‍🏫 (Former) Director of Eng at @Nubank, @Apple, @AmericanExpress. 🇧🇷 in 🗽. I share career growth strategies, leadership insights & my many reads. 📚🦕👇',
+      img: 'thiago-ghisi.jpg',
+      twitter: 'https://x.com/thiagoghisi'
     },
     {
       name: 'Vic Vijayakumar',
-      bio: "Co-host of Engineering Advice You Didn't Ask For.",
-      img: 'avatar-light.png'
+      bio: '3x dad, 6.2x runner, 0.5x violinist, 1x principal engineer. my projects: onetimefax.com everyoak.com mailtimer.com',
+      img: 'vic-vijayakumar.jpg',
+      twitter: 'https://x.com/VicVijayakumar'
     }
   ],
   platforms: {
