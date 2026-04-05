@@ -1,0 +1,45 @@
+@property --gradient-start {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: oklch(58.6% 0.116 181.4);
+}
+
+@property --gradient-stop {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: oklch(58.6% 0.116 181.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  @property --gradient-start {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: oklch(70.8% 0.042 186.52);
+  }
+
+  @property --gradient-stop {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: oklch(70.8% 0.042 186.52);
+  }
+}
+
+@utility gradient-icon {
+  background: linear-gradient(
+    180deg,
+    var(--gradient-start) 0%,
+    var(--gradient-stop) 100%
+  );
+  transition:
+    --gradient-start 300ms,
+    --gradient-stop 300ms;
+
+  &:hover {
+    --gradient-start: oklch(63.6% 0.152 183.34);
+    --gradient-stop: oklch(61.1% 0.109 221.05);
+    @media (prefers-color-scheme: dark) {
+      --gradient-start: oklch(82.1% 0.099 187.73);
+      --gradient-stop: oklch(78.9% 0.07 218.74);
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --background-image-dots-dark: url('/images/dots-dark.svg');
+  --background-image-dots-light: url('/images/dots-light.svg');
+  --background-image-gradient-light: background: radial-gradient(
+      77% 77% at 50% 0%,
+      #d9f5ef 0%,
+      rgba(217, 245, 239, 0) 100%
+    );
+  --background-image-gradient-dark: radial-gradient(
+    77% 77% at 50% 0%,
+    #27424d 0%,
+    rgba(39, 66, 77, 0) 100%
+  );
+
+  --color-dark-background: oklch(16.5% 0.019 219.54);
+  --color-dark-border: oklch(28.6% 0.018 218.84);
+  --color-dark-button: oklch(24.3% 0.02 220.31);
+  --color-dark-card: oklch(21.1% 0.017 220.13);
+  --color-dark-icon: oklch(70.8% 0.042 186.52);
+  --color-dark-input-bg: oklch(24.4% 0.016 220.03);
+  --color-dark-input-border: oklch(33.5% 0.022 219.85);
+  --color-dark-input-border-focused: oklch(56.6% 0.066 188.86);
+  --color-dark-player: oklch(26.2% 0.017 220.09);
+  --color-dark-text-body: oklch(76.6% 0.013 214.02);
+  --color-light-card: oklch(98.9% 0.004 97.1);
+  --color-light-icon: oklch(58.6% 0.116 181.4);
+  --color-light-input-bg: oklch(100% 0 0);
+  --color-light-input-border: oklch(90.1% 0.009 215.41);
+  --color-light-input-border-focused: oklch(62.3% 0.05 188.17);
+  --color-light-player: oklch(95.7% 0.009 186.64);
+  --color-light-text-body: oklch(44.8% 0.014 218.66);
+  --color-light-text-heading: oklch(25.5% 0.03 220.16);
+
+  --font-body: var(--astro-font-manrope);
+  --font-heading: var(--astro-font-space-grotesk);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
