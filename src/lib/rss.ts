@@ -120,12 +120,8 @@ export async function getAllEpisodes() {
           enclosures,
           published,
           itunes_duration,
-          itunes_episode,
-          itunes_episodeType,
           itunes_image
         }) => {
-          const episodeNumber =
-            itunes_episodeType === 'bonus' ? 'Bonus' : `${itunes_episode}`;
           const episodeSlug = dasherize(title);
           const safeDescription = description || '';
           const episodeContent = content_encoded || safeDescription;
@@ -137,7 +133,7 @@ export async function getAllEpisodes() {
             description: truncate(htmlToText(safeDescription), 260),
             duration: normalizeDuration(itunes_duration),
             episodeImage: itunes_image?.href,
-            episodeNumber,
+            episodeNumber: '',
             episodeSlug,
             episodeThumbnail: await optimizeImage(itunes_image?.href),
             published,
@@ -149,6 +145,11 @@ export async function getAllEpisodes() {
         }
       )
   );
+
+  // Assign a global episode number across all seasons (oldest -> newest).
+  for (const [index, episode] of [...episodes].sort((a, b) => a.published - b.published).entries()) {
+    episode.episodeNumber = `${index + 1}`;
+  }
 
   episodesCache = episodes;
   return episodes;
